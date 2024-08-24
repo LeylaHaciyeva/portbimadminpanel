@@ -31,16 +31,24 @@
 
 
 import React from 'react';
-import {  Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AdminDashboard from './pages/AdminDashboard';
 import Login from './pages/Login.js';
 // import Home from './pages/Home.js';
+import Content from './components/Content.js'
 import './App.css'
+import About from './pages/About.js';
 const App = () => {
     return (
         <Routes>
-                <Route path="/login" element={<Login/>} />
-                <Route path="/admin" element={<AdminDashboard/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/about" element={<About />} />
+            <Route path="/admin/content" element={<Content />} />
+
+            {/* <Route path="/admin" element={<AdminDashboard/>} /> */}
+            {/* <Route path="/admin" element={<AdminDashboard/>} /> */}
+
         </Routes>
     );
 };

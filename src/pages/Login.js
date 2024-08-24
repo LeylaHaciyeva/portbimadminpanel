@@ -3,51 +3,35 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('admin');
+    const [password, setPassword] = useState('admin123');
     const [message, setMessage] = useState('');
     // const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8080/perform_login', {
-                username,
-                password,
-            }, {
-                withCredentials: true,
-            });
-
-            if (response.status === 200) {
-                setMessage('Login successful!');
-                window.location.href = '/admin'; 
-            } else {
-                setMessage('Login failed!');
+            try {
+                const response = await axios.post('http://localhost:8080/login', null, {
+                    params: {
+                        username,
+                        password,
+                    },
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    }
+                });
+                if (response.status === 200) {
+                    setMessage('Login successful!');
+                    window.location.href = '/admin'; 
+                } else {
+                    setMessage('Login failed!');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                setMessage('An error occurred during login');
             }
-        } catch (error) {
-            console.error('Error:', error);
-            setMessage('An error occurred during login');
-        } finally {
-            setMessage("end");
-        }
+        };
 
-        // try {
-        //     const response = await axios.post('http://localhost:8080/perform_login', {
-        //         username,
-        //         password,
-        //     }, {
-        //         headers: {
-        //             'Content-Type': 'application/x-www-form-urlencoded',
-        //         },
-        //         withCredentials: true});
-
-        //     if (response.status === 200) {
-        //         navigate('/admin');
-        //     }
-        // } catch (error) {
-        //     setError('Invalid username or password');
-        // }
-    };
 
     return (
         <div className='login-container'>
@@ -67,7 +51,7 @@ const Login = () => {
                 <div  className='form-group'>
                     <label>Password </label>
                     <input
-                        type="password"
+                        type="text"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />

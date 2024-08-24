@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Content = ({ language }) => {
+const Content = () => {
     const [content, setContent] = useState(null);
-
+    const [id, setId] = useState(1)
     const fetchContent = async () => {
-        console.log("fetch contentf gjdfhgkd");
-        
+        console.log("fetch content");
         try {
-            const response = await axios.get('http://localhost:8080/api/about', { params: {language} });
+            const response = await axios.get(`http://localhost:8080/api/about/${id}`);
             setContent(response.data);
             console.log(response.data);
         } catch (error) {
@@ -17,14 +16,12 @@ const Content = ({ language }) => {
     };
     useEffect(() => {
         console.log("hiiii");
-        
         fetchContent();
-    });
+    },[]);
     return <div>
-
         clfgdkjfg
         {
-// content
+            // content
         }
         {/* <img src={`data:image/jpeg;base64,${content?.aboutImage2}`} /> */}
     </div>;

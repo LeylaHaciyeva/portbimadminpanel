@@ -3,13 +3,13 @@ import axios from 'axios';
 
 const Content = () => {
     const [content, setContent] = useState(null);
-    const [id, setId] = useState(1)
     const fetchContent = async () => {
         console.log("fetch content");
         try {
-            const response = await axios.get(`http://localhost:8080/api/about/${id}`);
+            const response = await axios.get(`http://localhost:8080/api/about/en`);
             setContent(response.data);
             console.log(response.data);
+
         } catch (error) {
             console.error('Error fetching about us content:', error);
         }
@@ -17,13 +17,18 @@ const Content = () => {
     useEffect(() => {
         console.log("hiiii");
         fetchContent();
-    },[]);
+    }, []);
     return <div>
-        clfgdkjfg
         {
-            // content
+            content ? <><img src={`data:image/jpeg;base64,${content.mainImage}`} /> <div>{content?.language}</div></> : null
         }
-        {/* <img src={`data:image/jpeg;base64,${content?.aboutImage2}`} /> */}
+        {/* {
+            content ? content.images.map((src) => {
+                return(
+                <img src={`data:image/jpeg;base64,${src}`} />
+                )
+            }) : null
+        } */}
     </div>;
 };
 

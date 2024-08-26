@@ -54,6 +54,9 @@
   background-color: rgb(3, 3, 46);
   color: white;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .sidebar div{
   max-height: 200px;
@@ -70,4 +73,11 @@
 }
 .about-container form{
   padding: 20px;
+  margin-left: 130px;
+}
+.about-container form label{
+  padding: 10px 0;
+}
+.about-container form div{
+  display: grid;
 }

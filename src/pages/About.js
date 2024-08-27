@@ -71,70 +71,63 @@ const About = () => {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-lg-6'>
-                            <div>
-                                <label>Language:</label>
-                                <select value={language} onChange={(e) => setLanguage(e.target.value)} required>
-                                    <option value="en">english</option>
-                                    <option value="ru">russian</option>
-                                    <option value="az">azerbaijani</option>
-                                </select>
-                            </div>
+                           
                             <div>
                                 <label>Main image(only one picture)</label>
-                                <input type="file" accept="image/*" onChange={(e) => setMainImage(e.target.files[0])} />
+                                <input required type="file" accept="image/*" onChange={(e) => setMainImage(e.target.files[0])} />
                             </div>
                             <div>
                                 <label>Header</label>
-                                <input value={header} onChange={(e) => setHeader(e.target.value)} />
+                                <input required value={header} onChange={(e) => setHeader(e.target.value)} />
                             </div>
                             <div>
                                 <label>Description header</label>
-                                <textarea value={descHeader} onChange={(e) => setDescHeader(e.target.value)} />
+                                <textarea rows={8} cols={8} value={descHeader} onChange={(e) => setDescHeader(e.target.value)} />
                             </div>
                             <div>
                                 <label>Description 1</label>
-                                <textarea value={desc1} onChange={(e) => setDesc1(e.target.value)} />
+                                <textarea rows={8} cols={8} value={desc1} onChange={(e) => setDesc1(e.target.value)} />
                             </div>
                             <div>
                                 <label>Description 2</label>
-                                <textarea value={desc2} onChange={(e) => setDesc2(e.target.value)} />
+                                <textarea rows={8} cols={8} value={desc2} onChange={(e) => setDesc2(e.target.value)} />
                             </div>
                             <div>
                                 <label>Tool header</label>
-                                <input value={toolHeader} onChange={(e) => setToolHeader(e.target.value)} />
+                                <input required value={toolHeader} onChange={(e) => setToolHeader(e.target.value)} />
                             </div>
                             <div>
                                 <label>Tool images</label>
-                                <input type="file" multiple accept="image/*" onChange={(e) => setToolImages(e.target.files)} />
+                                <input required type="file" multiple accept="image/*" onChange={(e) => setToolImages(e.target.files)} />
                             </div>
                         </div>
                         <div className='col-lg-6'>
 
                             <div>
                                 <label>Client header</label>
-                                <input value={clientHeader} onChange={(e) => setClientHeader(e.target.value)} />
+                                <input required value={clientHeader} onChange={(e) => setClientHeader(e.target.value)} />
                             </div>
                             <div>
                                 <label>Client images</label>
-                                <input type="file" multiple accept="image/*" onChange={(e) => setClientImages(e.target.files)} />
+                                <input required type="file" multiple accept="image/*" onChange={(e) => setClientImages(e.target.files)} />
                             </div>
                             <div>
                                 <label>DescImage1</label>
-                                <input type="file" accept="image/*" onChange={(e) => setDescImage1(e.target.files[0])} />
+                                <input required type="file" accept="image/*" onChange={(e) => setDescImage1(e.target.files[0])} />
                             </div>
                             <div>
                                 <label>DescImage2</label>
-                                <input type="file" accept="image/*" onChange={(e) => setDescImage2(e.target.files[0])} />
+                                <input required type="file" accept="image/*" onChange={(e) => setDescImage2(e.target.files[0])} />
                             </div>
                             <div>
                                 <label>descBetweenHeader</label>
-                                <input value={descBetweenHeader} onChange={(e) => setDescBetweenHeader(e.target.value)} />
+                                <input required value={descBetweenHeader} onChange={(e) => setDescBetweenHeader(e.target.value)} />
                             </div>
                             <div>
                                 <label>descBetweenDescription</label>
-                                <textarea value={descBetweenDescription} onChange={(e) => setDescBetweenDescription(e.target.value)} />
+                                <textarea rows={8} cols={8} value={descBetweenDescription} onChange={(e) => setDescBetweenDescription(e.target.value)} />
                             </div>
-                            <button type="submit">Add</button>
+                            <button className='submit-btn' type="submit">Add</button>
                         </div>
                     </div>
                 </div>

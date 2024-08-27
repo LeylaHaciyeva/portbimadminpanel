@@ -47,7 +47,7 @@
 
 
 
-.sidebar{
+.sidebar {
   width: calc(10% - 40px);
   height: 100vh;
   display: grid;
@@ -58,7 +58,8 @@
   top: 0;
   left: 0;
 }
-.sidebar div{
+
+.sidebar div {
   max-height: 200px;
   display: grid;
 }
@@ -68,16 +69,84 @@
 
 /* --------------------------------------------about-------------------------- */
 
-.about-container{
+.about-container {
   display: flex;
 }
-.about-container form{
+
+.about-container form {
   padding: 20px;
   margin-left: 130px;
 }
-.about-container form label{
+
+.about-container form label {
   padding: 10px 0;
 }
-.about-container form div{
+
+.about-container form div {
   display: grid;
+}
+
+.about-container input,
+.about-container textarea {
+  width: 300px;
+  padding: 10px;
+
+}
+
+.about-container .submit-btn {
+  margin-top: 10px;
+  background-color: rgb(15, 15, 101);
+  width: 100px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.about-container .submit-btn:hover {
+  background-color: rgb(22, 22, 160);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* --------------------------------------------career-------------------------- */
+.career-container {
+  /* display: flex; */
+}
+
+.career-container form {
+  width: 50%;
+  padding: 20px;
+  margin-left: 130px;
+}
+
+.career-container form label {
+  padding: 10px 0;
+}
+
+.career-container form .form-group {
+  display: grid;
+}
+
+.form-group-quill {
+  margin-bottom: 60px;
+}
+
+.career-container input,
+.career-container select {
+  width: 300px;
+  padding: 10px;
+}
+
+.career-container button {
+  margin-top: 10px;
+  background-color: rgb(15, 15, 101);
+  width: 100px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
 }

@@ -71,7 +71,14 @@ const About = () => {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-lg-6'>
-                           
+                            <div className='form-group'>
+                                <label>Language:</label>
+                                <select value={language} onChange={(e) => setLanguage(e.target.value)} required>
+                                    <option value="en">english</option>
+                                    <option value="ru">russian</option>
+                                    <option value="az">azerbaijani</option>
+                                </select>
+                            </div>
                             <div>
                                 <label>Main image(only one picture)</label>
                                 <input required type="file" accept="image/*" onChange={(e) => setMainImage(e.target.files[0])} />

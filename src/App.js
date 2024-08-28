@@ -39,6 +39,7 @@ import Content from './components/Content.js'
 import './App.css'
 import About from './pages/About.js';
 import Career from './pages/Career.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
     return (
         <Routes>
@@ -47,8 +48,6 @@ const App = () => {
             <Route path="/admin/about" element={<About />} />
             <Route path="/admin/content" element={<Content />} />
             <Route path="/admin/career" element={<Career />} />
-
-
             {/* <Route path="/admin" element={<AdminDashboard/>} /> */}
             {/* <Route path="/admin" element={<AdminDashboard/>} /> */}
 
